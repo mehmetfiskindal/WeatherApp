@@ -48,6 +48,16 @@ Uygulamayı çalıştırdıktan sonra, cihazınızın konum izinlerini vererek v
 
 **Plan** sekmesinde şehir adı yazabilir veya konum izni vererek günlük önerileri görebilirsiniz. Bu ekran yağış ihtimali, rüzgar, UV ve hissedilen sıcaklığı birlikte değerlendirerek pratik karar kartları üretir.
 
+## Ekran Görüntüleri
+
+### API Key
+
+![API Key Screen](Documentation/Screenshots/api-key.png)
+
+### Akıllı Plan
+
+![Smart Plan Screen](Documentation/Screenshots/smart-plan.png)
+
 ## Test
 
 ```bash
