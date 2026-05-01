@@ -17,12 +17,14 @@
 		F619DD502A6B2B0800917746 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F619DD4F2A6B2B0800917746 /* Preview Assets.xcassets */; };
 		F61DD0252A9D02B90013E705 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DD0242A9D02B90013E705 /* WeatherViewModel.swift */; };
 		F61DD0272A9D02C80013E705 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DD0262A9D02C80013E705 /* WeatherView.swift */; };
+		F62000012D10000100111111 /* APIKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62000022D10000100111111 /* APIKeyStore.swift */; };
+		F62000032D10000100111111 /* APIKeySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62000042D10000100111111 /* APIKeySettingsView.swift */; };
+		F62000052D10000100111111 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F62000062D10000100111111 /* KeychainAccess */; };
 		F631AF252B80C8F3006463F4 /* INetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631AF242B80C8F3006463F4 /* INetworkManager.swift */; };
 		F631AF282B80CB3D006463F4 /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631AF272B80CB3D006463F4 /* CoreLocationManager.swift */; };
 		F6438D802A75985E002FB331 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6438D7F2A75985E002FB331 /* NetworkManager.swift */; };
 		F679015B2A7C33A50008A332 /* FontConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F679015A2A7C33A50008A332 /* FontConstants.swift */; };
 		F679015E2A7C349B0008A332 /* FontEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F679015D2A7C349B0008A332 /* FontEnum.swift */; };
-		F6A161582C90540700C741C2 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6A161572C90540700C741C2 /* Keys.plist */; };
 		F6AEC31D2AA73EA200AD5F5E /* MyWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEC31C2AA73EA200AD5F5E /* MyWeatherViewModel.swift */; };
 		F6AEC31F2AA73EAF00AD5F5E /* MyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEC31E2AA73EAF00AD5F5E /* MyWeatherView.swift */; };
 		F6E342C42B7E53AB00C45EB5 /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E342C32B7E53AB00C45EB5 /* NetworkPath.swift */; };
@@ -61,12 +63,13 @@
 		F619DD5C2A6B316100917746 /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Alamofire; path = Carthage/Checkouts/Alamofire; sourceTree = "<group>"; };
 		F61DD0242A9D02B90013E705 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		F61DD0262A9D02C80013E705 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		F62000022D10000100111111 /* APIKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyStore.swift; sourceTree = "<group>"; };
+		F62000042D10000100111111 /* APIKeySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeySettingsView.swift; sourceTree = "<group>"; };
 		F631AF242B80C8F3006463F4 /* INetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INetworkManager.swift; sourceTree = "<group>"; };
 		F631AF272B80CB3D006463F4 /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
 		F6438D7F2A75985E002FB331 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F679015A2A7C33A50008A332 /* FontConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConstants.swift; sourceTree = "<group>"; };
 		F679015D2A7C349B0008A332 /* FontEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontEnum.swift; sourceTree = "<group>"; };
-		F6A161572C90540700C741C2 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		F6AEC31C2AA73EA200AD5F5E /* MyWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWeatherViewModel.swift; sourceTree = "<group>"; };
 		F6AEC31E2AA73EAF00AD5F5E /* MyWeatherView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MyWeatherView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F6E342C32B7E53AB00C45EB5 /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 			files = (
 				F6E342C62B7E569300C45EB5 /* Alamofire in Frameworks */,
 				F6E342C82B7E569300C45EB5 /* Connectivity in Frameworks */,
+				F62000052D10000100111111 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +118,6 @@
 		F619DD3B2A6B2B0700917746 = {
 			isa = PBXGroup;
 			children = (
-				F6A161572C90540700C741C2 /* Keys.plist */,
 				F619DD462A6B2B0700917746 /* WeatherApp */,
 				F619DD452A6B2B0700917746 /* Products */,
 				F619DD582A6B312E00917746 /* Frameworks */,
@@ -219,6 +222,7 @@
 				F6438D7F2A75985E002FB331 /* NetworkManager.swift */,
 				F6E342C32B7E53AB00C45EB5 /* NetworkPath.swift */,
 				F631AF242B80C8F3006463F4 /* INetworkManager.swift */,
+				F62000022D10000100111111 /* APIKeyStore.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -252,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				F6F33F5D2AA338D700C39E89 /* HomeView.swift */,
+				F62000042D10000100111111 /* APIKeySettingsView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			packageProductDependencies = (
 				F6E342C52B7E569300C45EB5 /* Alamofire */,
 				F6E342C72B7E569300C45EB5 /* Connectivity */,
+				F62000062D10000100111111 /* KeychainAccess */,
 			);
 			productName = WeatherApp;
 			productReference = F619DD442A6B2B0700917746 /* WeatherApp.app */;
@@ -289,7 +295,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					F619DD432A6B2B0700917746 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -308,6 +314,7 @@
 			packageReferences = (
 				F65FE7AB2ABF7C1F00778779 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F65FE7AE2ABF7C2C00778779 /* XCRemoteSwiftPackageReference "Connectivity" */,
+				F62000072D10000100111111 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = F619DD452A6B2B0700917746 /* Products */;
 			projectDirPath = "";
@@ -323,7 +330,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6A161582C90540700C741C2 /* Keys.plist in Resources */,
 				F619DD502A6B2B0800917746 /* Preview Assets.xcassets in Resources */,
 				F619DD4C2A6B2B0800917746 /* Assets.xcassets in Resources */,
 			);
@@ -337,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6AEC31D2AA73EA200AD5F5E /* MyWeatherViewModel.swift in Sources */,
+				F62000012D10000100111111 /* APIKeyStore.swift in Sources */,
 				F6131B2F2AADCD8B009F70E4 /* NetworkError.swift in Sources */,
 				F6F33F5E2AA338D700C39E89 /* HomeView.swift in Sources */,
 				F6131B212AAB9A90009F70E4 /* WeatherAppViewModel.swift in Sources */,
@@ -349,6 +356,7 @@
 				F61DD0252A9D02B90013E705 /* WeatherViewModel.swift in Sources */,
 				F61DD0272A9D02C80013E705 /* WeatherView.swift in Sources */,
 				F6438D802A75985E002FB331 /* NetworkManager.swift in Sources */,
+				F62000032D10000100111111 /* APIKeySettingsView.swift in Sources */,
 				F6131B262AABA9ED009F70E4 /* ForecastViewModel.swift in Sources */,
 				F619DD482A6B2B0700917746 /* WeatherApp.swift in Sources */,
 				F631AF252B80C8F3006463F4 /* INetworkManager.swift in Sources */,
@@ -395,6 +403,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = PRU37TGHVS;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -415,6 +424,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -456,6 +466,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = PRU37TGHVS;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -469,6 +480,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -485,7 +497,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherApp/Preview Content\"";
-				DEVELOPMENT_TEAM = PRU37TGHVS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
@@ -527,7 +538,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherApp/Preview Content\"";
-				DEVELOPMENT_TEAM = PRU37TGHVS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
@@ -598,6 +608,14 @@
 				minimumVersion = 6.1.1;
 			};
 		};
+		F62000072D10000100111111 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -610,6 +628,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F65FE7AE2ABF7C2C00778779 /* XCRemoteSwiftPackageReference "Connectivity" */;
 			productName = Connectivity;
+		};
+		F62000062D10000100111111 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F62000072D10000100111111 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

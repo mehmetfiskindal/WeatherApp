@@ -1,13 +1,13 @@
 {
-  "originHash" : "376195079db5496a156812783b0b1b8805485e5fcc809c816a34067145fcbadf",
+  "originHash" : "c988eb0a56df68c7662817103a5a89002e3a76cd88c9d4a48b7464d5415e3b12",
   "pins" : [
     {
       "identity" : "alamofire",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "f455c2975872ccd2d9c81594c658af65716e9b9a",
-        "version" : "5.9.1"
+        "revision" : "e938f8c66708e7352fc7e3512647fa54255b267a",
+        "version" : "5.11.2"
       }
     },
     {
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "baf392cd229138c268e5dbaf3ee84e6ae0876173",
         "version" : "6.1.1"
+      }
+    },
+    {
+      "identity" : "keychainaccess",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kishikawakatsumi/KeychainAccess.git",
+      "state" : {
+        "revision" : "84e546727d66f1adc5439debad16270d0fdd04e7",
+        "version" : "4.2.2"
       }
     }
   ],

@@ -9,17 +9,7 @@ class WeatherAppViewModel: ObservableObject {
     setupConnectivity()
   }
   func getApiKey() {
-    if let plistPath = Bundle.main.path(forResource: "Keys", ofType: "plist"),
-      let keys = NSDictionary(contentsOfFile: plistPath) as? [String: Any],
-      let apiKey = keys["key"] as? String {
-      UserDefaults.standard.set(apiKey, forKey: "key")
-      // Değer almak
-      if let savedApiKey = UserDefaults.standard.string(forKey: "key") {
-        print("API Key:", savedApiKey)
-      }
-    } else {
-      print("API Key not found.")
-    }
+    APIKeyStore.shared.migrateBundledAPIKeyIfNeeded()
   }
   func setupConnectivity() {
     connectivity.whenConnected = { [weak self] _ in

@@ -8,22 +8,33 @@
 import SwiftUI
 
 struct HomeView: View {
+  @ObservedObject private var apiKeyStore = APIKeyStore.shared
+
   var body: some View {
-    TabView {
-      VStack {
-        WeatherView()
+    if apiKeyStore.apiKey == nil {
+      APIKeySettingsView()
+    } else {
+      TabView {
+        VStack {
+          WeatherView()
 
-      }.tabItem {
-        Label("Anasayfa", systemImage: "house")
-      }
-      MyWeatherView()
-        .tabItem {
-        Label("Konumum", systemImage: "location")
-      }
+        }.tabItem {
+          Label("Anasayfa", systemImage: "house")
+        }
+        MyWeatherView()
+          .tabItem {
+          Label("Konumum", systemImage: "location")
+        }
 
-      ForecastView()
-        .tabItem {
-        Label("Haftalık", systemImage: "calendar")
+        ForecastView()
+          .tabItem {
+          Label("Haftalık", systemImage: "calendar")
+        }
+
+        APIKeySettingsView()
+          .tabItem {
+            Label("API Key", systemImage: "key")
+          }
       }
     }
   }

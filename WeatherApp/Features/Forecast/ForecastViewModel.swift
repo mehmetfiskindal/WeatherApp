@@ -6,17 +6,15 @@
 //
 
 import Foundation
+@MainActor
 final class ForecastViewModel: ObservableObject {
   @Published var forecastList: [Liste]? = [Liste]()
   private let manager = NetworkManager.networkManager
 
   func fetchForecast(city: String) async {
     let result = await manager.fetch(path: .forecast(city: city), method: .get, type: OpenWeatherMap.self)
-    Task {
-      DispatchQueue.main.async { [self] in
-        forecastList = result?.list
-      }
-    }
+    // We are on the main actor because the type is @MainActor, so it's safe to mutate published state.
+    self.forecastList = result?.list
   }
   func kelvinToCelsius(kelvin: Double) -> Int {
     let celsius = Int(kelvin - 273.15)

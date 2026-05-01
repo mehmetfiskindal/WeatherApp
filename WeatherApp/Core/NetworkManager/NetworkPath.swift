@@ -10,7 +10,7 @@ enum NetworkPath: RawRepresentable {
   static let apiKey_ = "key"
 
   static var apiKey: String? {
-    return UserDefaults.standard.string(forKey: apiKey_)
+    return APIKeyStore.shared.apiKey
   }
 
   static let baseUrl = "https://api.openweathermap.org/data/2.5/"
