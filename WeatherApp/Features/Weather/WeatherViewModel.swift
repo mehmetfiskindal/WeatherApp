@@ -30,6 +30,9 @@ final class WeatherViewModel: ObservableObject {
     }
 
     func kelvinToCelsius(kelvin: Double) -> Double {
+        if kelvin < 100 {
+            return kelvin
+        }
         return kelvin - 273.15
     }
 }

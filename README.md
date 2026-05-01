@@ -5,9 +5,11 @@ Bu Swift Weather uygulaması, SwiftUI kullanılarak geliştirilmiş bir hava dur
 ## Özellikler
 
 - Kullanıcıya anlık hava durumu bilgilerini gösterme
-- Haftalık hava durumu tahminlerini görüntüleme
 - Kullanıcı konumuna bağlı olarak hava durumu verilerini otomatik olarak güncelleme
 - Kullanıcı dostu arayüz ile kolay kullanım
+- Akıllı Plan ekranı ile şemsiye, kıyafet, dışarı çıkmak için en iyi saat ve saatlik plan önerileri
+- Yağmur, rüzgar ve UV risk kartları
+- Kısa süreli cache ile ağ hatalarında son başarılı hava planını gösterme
 
 ## Kullanılan Teknolojiler
 
@@ -42,13 +44,15 @@ Geliştirme sırasında eski `Keys.plist` dosyası kullanılmışsa uygulama bun
 
 ## Kullanım
 
-Uygulamayı çalıştırdıktan sonra, cihazınızın konum izinlerini vererek veya konum bilgisi girerek hava durumu bilgilerini alabilirsiniz.
+Uygulamayı çalıştırdıktan sonra, cihazınızın konum izinlerini vererek veya şehir adı girerek hava planı önerilerini alabilirsiniz.
 
-## Ekran Görüntüleri
+**Plan** sekmesinde şehir adı yazabilir veya konum izni vererek günlük önerileri görebilirsiniz. Bu ekran yağış ihtimali, rüzgar, UV ve hissedilen sıcaklığı birlikte değerlendirerek pratik karar kartları üretir.
 
-![Weather App Screen1](https://github.com/developersailor/WeatherApp/raw/main/appscreen1.png)
-![Weather App Screen2](https://github.com/developersailor/WeatherApp/raw/main/appscreen2.png)
-![Weather App Screen3](https://github.com/developersailor/WeatherApp/raw/main/appscreen3.png)
+## Test
+
+```bash
+xcodebuild test -project WeatherApp.xcodeproj -scheme WeatherApp -destination 'platform=iOS Simulator,name=iPhone 17'
+```
 
 ## Katkıda Bulunma
 

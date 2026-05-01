@@ -8,6 +8,23 @@ import CoreLocation
 import Alamofire
 import Foundation
 
+enum WeatherAPIError: LocalizedError {
+  case invalidURL
+  case emptyResponse
+  case requestFailed(String)
+
+  var errorDescription: String? {
+    switch self {
+    case .invalidURL:
+      return "İstek adresi hazırlanamadı."
+    case .emptyResponse:
+      return "Sunucudan veri alınamadı."
+    case .requestFailed(let message):
+      return message
+    }
+  }
+}
+
 class NetworkManager: INetworkManager {
   internal var config: NetworkConfig
 
@@ -16,18 +33,38 @@ class NetworkManager: INetworkManager {
   }
 
   func fetch<T: Codable>(path: NetworkPath, method: HTTPMethod, type: T.Type) async -> T? {
-    let dataRequest = AF.request("\(config.baseUrl)\(path.rawValue)", method: method)
+    let result: Result<T, WeatherAPIError> = await fetchResult(path: path, method: method, type: type)
+
+    switch result {
+    case .success(let value):
+      return value
+    case .failure(let error):
+      print("ERROR: \(error.localizedDescription)")
+      return nil
+    }
+  }
+
+  func fetchResult<T: Codable>(path: NetworkPath, method: HTTPMethod, type: T.Type) async -> Result<T, WeatherAPIError> {
+    let urlString = "\(config.baseUrl)\(path.rawValue)"
+    guard URL(string: urlString) != nil else {
+      return .failure(.invalidURL)
+    }
+
+    let dataRequest = AF.request(urlString, method: method)
       .validate()
       .serializingDecodable(T.self)
 
     let result = await dataRequest.response
 
-    guard let value = result.value else {
-      print("ERROR: \(String(describing: result.error))")
-      return nil
+    if let value = result.value {
+      return .success(value)
     }
 
-    return value
+    if let error = result.error {
+      return .failure(.requestFailed(error.localizedDescription))
+    }
+
+    return .failure(.emptyResponse)
   }
 
   func post<T: Codable, R: Encodable>(path: NetworkPath, model: R, type: T.Type) async -> T? {
@@ -67,4 +104,3 @@ struct NetworkConfig {
 extension NetworkManager {
   static let networkManager: INetworkManager = NetworkManager(config: NetworkConfig(baseUrl: NetworkPath.baseUrl))
 }
-

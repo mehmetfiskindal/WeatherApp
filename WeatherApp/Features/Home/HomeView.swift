@@ -14,28 +14,7 @@ struct HomeView: View {
     if apiKeyStore.apiKey == nil {
       APIKeySettingsView()
     } else {
-      TabView {
-        VStack {
-          WeatherView()
-
-        }.tabItem {
-          Label("Anasayfa", systemImage: "house")
-        }
-        MyWeatherView()
-          .tabItem {
-          Label("Konumum", systemImage: "location")
-        }
-
-        ForecastView()
-          .tabItem {
-          Label("Haftalık", systemImage: "calendar")
-        }
-
-        APIKeySettingsView()
-          .tabItem {
-            Label("API Key", systemImage: "key")
-          }
-      }
+      SmartWeatherView()
     }
   }
 }

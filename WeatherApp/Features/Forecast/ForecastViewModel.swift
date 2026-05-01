@@ -17,6 +17,9 @@ final class ForecastViewModel: ObservableObject {
     self.forecastList = result?.list
   }
   func kelvinToCelsius(kelvin: Double) -> Int {
+    if kelvin < 100 {
+      return Int(kelvin)
+    }
     let celsius = Int(kelvin - 273.15)
     return celsius
   }

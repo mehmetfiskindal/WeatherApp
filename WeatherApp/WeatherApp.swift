@@ -19,11 +19,40 @@ struct WeatherApp: App {
         HomeView()
       }
       else {
-        Text("internet yok")
-        Button("Yeniden bağlan") {
+        NetworkUnavailableView {
           _viewModel.restartConnectivity()
         }
       }
+    }
+  }
+}
+
+private struct NetworkUnavailableView: View {
+  let retry: () -> Void
+
+  var body: some View {
+    ZStack {
+      WeatherGradientBackground(theme: .night)
+
+      WeatherGlassCard(theme: .night) {
+        VStack(alignment: .leading, spacing: WeatherSpacing.md) {
+          Image(systemName: "wifi.exclamationmark")
+            .font(.system(size: 36, weight: .semibold))
+            .foregroundStyle(WeatherColor.warning)
+
+          Text("İnternet bağlantısı yok")
+            .font(WeatherTypography.title)
+            .foregroundStyle(WeatherTheme.night.textPrimary)
+
+          Text("Hava planını hazırlamak için bağlantı gerekiyor. Bağlantını kontrol edip tekrar deneyebilirsin.")
+            .font(WeatherTypography.body)
+            .foregroundStyle(WeatherTheme.night.textSecondary)
+            .fixedSize(horizontal: false, vertical: true)
+
+          WeatherPrimaryButton("Yeniden dene", systemImage: "arrow.clockwise", theme: .night, action: retry)
+        }
+      }
+      .padding(WeatherSpacing.md)
     }
   }
 }
